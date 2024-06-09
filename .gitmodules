@@ -1,0 +1,4 @@
+[submodule "libraryofisaac"]
+	path = scripts_soda/lib/libraryofisaac
+	url = https://github.com/Team-Compliance/libraryofisaac
+	branch = repentogon

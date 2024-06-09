@@ -1,0 +1,3 @@
+<items gfxroot="gfx/items/" deathanm2="gfx/death_items.anm2" version="1">
+    <active id="2" name="Magic Hat" description="Smells like fruit" gfx="collectibles_soda_magichat.png" maxcharges="6" tags="offensive" quality="4" />
+</items>
