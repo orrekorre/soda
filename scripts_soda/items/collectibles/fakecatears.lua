@@ -1,7 +1,6 @@
 local mod = _SODA_BOY
 
-local catears = Isaac.GetItemIdByName("Fake Cat Ears")
-
+local fakecatears = Isaac.GetItemIdByName("Fake Cat Ears")
 
 function mod:CatEarUse(item)
     Isaac.ExecuteCommand("giveitem c665")
@@ -12,7 +11,7 @@ function mod:CatEarUse(item)
     }
 end
 
-mod:AddCallback(ModCallbacks.MC_USE_ITEM, mod.CatEarUse, catears)
+mod:AddCallback(ModCallbacks.MC_USE_ITEM, mod.CatEarUse, fakecatears)
 
 if  mod:CatEarUse(item) then
     function
