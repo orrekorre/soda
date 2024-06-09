@@ -14,7 +14,7 @@ for _, v in ipairs({
     "declarations.enums",
     "declarations.functions",
     -- Collectibles
-    "items.collectibles.magichat"
+    "items.collectibles.magichat",
 }) do
     include("scripts_soda." .. v)
 end
