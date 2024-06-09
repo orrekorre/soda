@@ -18,3 +18,25 @@ for _, v in ipairs({
 }) do
     include("scripts_soda." .. v)
 end
+
+local catears = Isaac.GetItemIdByName("Fake Cat Ears") -- is it okay if i include this in main or should i make a file in scripts?? also i still need to fix the bug that gets rid of guppys eye even when you dont have the active
+
+function mod:CatEarUse(item)
+    Isaac.ExecuteCommand("giveitem c665")
+    return {
+        Discharge = true,
+        Remove = false,
+        Showanim = true,
+    }
+end
+
+mod:AddCallback(ModCallbacks.MC_USE_ITEM, mod.CatEarUse, catears)
+
+if  mod:CatEarUse(item) then
+    function
+         mod:NewRoomfunction()
+        Isaac.ExecuteCommand("remove c665")
+    end
+end
+
+mod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, mod.NewRoomfunction)
