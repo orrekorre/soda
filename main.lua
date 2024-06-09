@@ -18,7 +18,6 @@ for _, v in ipairs({
 }) do
     include("scripts_soda." .. v)
 end
-
     "items.collectibles.fakecatears",
 }) do
     include("scripts_soda." .. v)
