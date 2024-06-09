@@ -23,9 +23,17 @@ local OUTCOMES = {
     ---@param player EntityPlayer
     ---@param rng RNG
     function (player, rng)
+        local sfxPlayed
+
         for _, v in ipairs(Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE)) do
             if SALVAGEABLE_PICKUPS[v.Variant] then
                 player:SalvageCollectible(v.SubType, v.Position, rng, mod:GetCurrentItemPool())
+
+                if not sfxPlayed then
+                    sfxPlayed = true
+                    mod.SFX:Play(SoundEffect.SOUND_THUMBS_DOWN)
+                end
+
                 v:Remove()
                 rng:Next()
             end
