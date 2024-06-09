@@ -1,8 +1,10 @@
 local mod = _SODA_BOY
 
-local TROLL_BOMB_DISTANCE = 60
+local NUM_BOMBS = 3
+local BOMB_DISTANCE = 60
+local BOMB_SPAWN_DELAY = 3
 
-local SALVAGABLE_PICKUPS = TSIL.Utils.Tables.ConstructDictionaryFromTable({
+local SALVAGEABLE_PICKUPS = TSIL.Utils.Tables.ConstructDictionaryFromTable({
     PickupVariant.PICKUP_COLLECTIBLE,
     PickupVariant.PICKUP_SHOPITEM,
 })
@@ -22,7 +24,7 @@ local OUTCOMES = {
     ---@param rng RNG
     function (player, rng)
         for _, v in ipairs(Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE)) do
-            if SALVAGABLE_PICKUPS[v.Variant] then
+            if SALVAGEABLE_PICKUPS[v.Variant] then
                 player:SalvageCollectible(v.SubType, v.Position, rng, mod:GetCurrentItemPool())
                 v:Remove()
                 rng:Next()
@@ -34,14 +36,14 @@ local OUTCOMES = {
     function (player)
         local room = mod.Game:GetRoom()
 
-        for i = 1, 3 do
+        for i = 1, NUM_BOMBS do
             TSIL.Utils.Functions.RunInFramesTemporary(function ()
                 TSIL.EntitySpecific.SpawnBomb(
                     BombVariant.BOMB_SUPERTROLL,
                     0,
-                    room:FindFreePickupSpawnPosition(player.Position, TROLL_BOMB_DISTANCE, true)
+                    room:FindFreePickupSpawnPosition(player.Position, BOMB_DISTANCE, true)
                 )
-            end, (i - 1) * 3)
+            end, (i - 1) * BOMB_SPAWN_DELAY)
         end
     end,
 }
