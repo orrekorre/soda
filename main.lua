@@ -15,10 +15,8 @@ for _, v in ipairs({
     "declarations.functions",
     -- Collectibles
     "items.collectibles.magichat",
-}) do
-    include("scripts_soda." .. v)
-end
     "items.collectibles.fakecatears",
+    "items.collectibles.fizzingsoul",
 }) do
     include("scripts_soda." .. v)
 end

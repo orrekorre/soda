@@ -1,0 +1,6 @@
+<entities anm2root="gfx/" version="5">
+    <entity id="3" name="Fizzing Soul" anm2path="1000.189_purgatory soul.anm2"
+        collisionInterval="14" collisionMass="3" collisionRadius="13" friction="1"
+        numGridCollisionPoints="12" shadowSize="11" stageHP="0" tags="cansacrifice">
+    </entity>
+</entities>
