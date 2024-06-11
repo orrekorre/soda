@@ -17,6 +17,7 @@ for _, v in ipairs({
     "items.collectibles.magichat",
     "items.collectibles.fakecatears",
     "items.collectibles.fizzingsoul",
+    "items.collectibles.scarletshades",
 }) do
     include("scripts_soda." .. v)
 end

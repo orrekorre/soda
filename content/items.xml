@@ -1,5 +1,6 @@
 <items gfxroot="gfx/items/" deathanm2="gfx/death_items.anm2" version="1">
     <active id="2" name="Magic Hat" description="Smells like fruit" gfx="collectibles_soda_magichat.png" maxcharges="6" tags="offensive" quality="4" />
     <active id="3" name="Fake Cat Ears" gfx="fakecatearstexturee.png" description="They reek" tags="offensive" quality="2" />
-    <familiar id="4" name="Fizzing Soul" gfx="collectibles_soda_fizzingsoul.png" description="Relentless flavor" tags="offensive summonable monstermanual" quality="3"/>
+    <familiar id="4" name="Fizzing Soul" gfx="collectibles_soda_fizzingsoul.png" description="Relentless flavor" tags="offensive summonable monstermanual" quality="3" />
+    <passive id="5" name="Scarlet Shades" gfx="collectibles_soda_scarletshades.png" description="Please don't hurt me" tags="summonable offensive" quality="3" cache="speed damage" />
 </items>
